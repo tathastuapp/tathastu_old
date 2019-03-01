@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tathastu/pages/bus-time-list/bus-time-list.dart';
 
 // cityGuide Icon Widget
 class BusTrainCardComponent extends StatelessWidget {
@@ -46,10 +47,10 @@ class BusTrainCardComponent extends StatelessWidget {
         final snackBar = SnackBar(content: Text("Tap"));
 
         Scaffold.of(context).showSnackBar(snackBar);
-        // Navigator.push(
-        //     context,
-        //     MaterialPageRoute(builder: (context) => NewspaperList()),
-        //   );
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BusTimeListPage()),
+          );
       },
       child: buildItemCard(context),
     );

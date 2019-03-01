@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tathastu/pages/category-list/category-list.dart';
+import 'package:tathastu/pages/contact-list/contact-list.dart';
 
 class CategoryItemComponent extends StatelessWidget {
   final String iconUrl;
@@ -19,10 +20,10 @@ class CategoryItemComponent extends StatelessWidget {
 
         Scaffold.of(context).showSnackBar(snackBar);
 
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => CategoryListPage()),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ContactListPage()),
+        );
       },
       child: new Container(
         width: MediaQuery.of(context).size.width/5,

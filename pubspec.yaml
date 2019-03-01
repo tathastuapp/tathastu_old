@@ -77,6 +77,7 @@ flutter:
    - assets/images/contacts.jpg
    - assets/images/login.jpg
    - assets/icons/masonary.svg
+   - assets/icons/clock.svg
    - assets/logo/sandesh.png
    - assets/logo/gujaratsamachar.png
    - assets/logo/divyabhaskar.png

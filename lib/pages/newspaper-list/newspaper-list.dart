@@ -44,7 +44,7 @@ class _NewspaperListPageState extends State<NewspaperListPage> {
                   ),
                   height: 100.0,
                   
-          child: Image.asset(logoUrl, height: 50.0,fit: BoxFit.contain,),
+          child: Image.asset(logoUrl, fit: BoxFit.contain,),
             
         );
   }
