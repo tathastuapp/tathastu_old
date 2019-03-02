@@ -16,10 +16,6 @@ class CategoryItemComponent extends StatelessWidget {
 
     return new InkWell(
       onTap: () {
-        final snackBar = SnackBar(content: Text("Tap"));
-
-        Scaffold.of(context).showSnackBar(snackBar);
-
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => ContactListPage()),

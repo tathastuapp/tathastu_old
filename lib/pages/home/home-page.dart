@@ -26,13 +26,19 @@ class _HomePageState extends State<HomePage> {
             style: TextStyle(color: Colors.black),
           ),
           actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.more_vert,
-                size: 24.0,
-              ),
-              onPressed: () {},
-            )
+            // PopupMenuButton<String>(
+            //   itemBuilder: (BuildContext context){
+            //     return [PopupMenuItem<String>(
+            //       value: 'Settings',
+            //       child: Text('Settings'),
+            //     ),
+            //     PopupMenuItem<String>(
+            //       value: 'Help',
+            //       child: Text('Help'),
+            //     )];
+            //   },
+            // ),
+            
           ],
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,

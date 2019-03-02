@@ -139,8 +139,9 @@ class _BusTimeListPageState extends State<BusTimeListPage> {
         boxShadow: [
           BoxShadow(
             color: Colors.blueGrey[100],
-            blurRadius: 32.0,
+            blurRadius: 20.0,
             spreadRadius: 1.0,
+            offset: Offset(0, 12),
           ),
         ],
       ),

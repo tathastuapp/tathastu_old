@@ -45,9 +45,7 @@ class CityGuideCardComponent extends StatelessWidget {
     
     return InkWell(
         onTap: () {
-          final snackBar = SnackBar(content: Text("Tap"));
-
-          // Scaffold.of(context).showSnackBar(snackBar);
+          
         //   Navigator.push(
         //   context,
         //   MaterialPageRoute(builder: (context) => CategoryListPage()),
@@ -61,8 +59,9 @@ class CityGuideCardComponent extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.blueGrey[100],
-                        blurRadius: 32.0,
-                        spreadRadius: 1.0,
+                        blurRadius: 20.0,
+                spreadRadius: 1.0,
+                offset: Offset(0, 10),
                       ),
                     ],
                   ),

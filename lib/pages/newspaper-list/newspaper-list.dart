@@ -12,8 +12,24 @@ class _NewspaperListPageState extends State<NewspaperListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Newspaper List'),
+        title: Text(
+          'Newspaper List',
+          style: TextStyle(color: Colors.black),
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.more_vert,
+              size: 24.0,
+            ),
+            onPressed: () {},
+          )
+        ],
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
       body: ListView(
         padding: EdgeInsets.all(8.0),

@@ -50,7 +50,8 @@ flutter:
    - assets/icons/facebook.svg
    - assets/icons/twitter.svg
    - assets/icons/house.svg
-   - assets/icons/boy.svg
+   - assets/icons/analytics.svg
+   - assets/icons/team.svg
    - assets/icons/contact.svg
    - assets/icons/key.svg
    - assets/icons/exit.svg
@@ -69,6 +70,7 @@ flutter:
    - assets/icons/train.svg
    - assets/icons/newspaper.svg
    - assets/icons/medal.svg
+   - assets/images/profile.jpg
    - assets/images/photo.jpg
    - assets/images/city.jpg
    - assets/images/service.jpg
@@ -78,6 +80,14 @@ flutter:
    - assets/images/login.jpg
    - assets/icons/masonary.svg
    - assets/icons/clock.svg
+   - assets/icons/phone.svg
+   - assets/icons/email.svg
+   - assets/icons/map.svg
+   - assets/icons/internet.svg
+   - assets/icons/categories.svg
+   - assets/icons/document.svg
+   - assets/icons/web-page.svg
+   - assets/icons/sale.svg
    - assets/logo/sandesh.png
    - assets/logo/gujaratsamachar.png
    - assets/logo/divyabhaskar.png

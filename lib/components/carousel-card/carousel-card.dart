@@ -26,6 +26,7 @@ class _CarouselCardComponentState extends State<CarouselCardComponent> {
   Widget build(BuildContext context) {
     return Container(
       height: 200.0,
+      
       child: Carousel(
         autoplay: true,
         autoplayDuration: Duration(seconds: 3),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tathastu/pages/manage-account/manage-account.dart';
 
 class DrawerListComponent extends StatelessWidget {
   
@@ -57,7 +58,23 @@ class DrawerListComponent extends StatelessWidget {
             width: 32,
             height: 32,
             child: new SvgPicture.asset(
-              'assets/icons/boy.svg',
+              'assets/icons/analytics.svg',
+            ),
+          ),
+          title: new Text('Manage Account'),
+          onTap: () {
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ManageAccountPage()),
+        );
+          },
+        ),
+        new ListTile(
+          leading: Container(
+            width: 32,
+            height: 32,
+            child: new SvgPicture.asset(
+              'assets/icons/team.svg',
             ),
           ),
           title: new Text('About Us'),

@@ -42,8 +42,12 @@ class BusTrainCardComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return buildItemCard(context);
+  }
+
+  Widget buildItem(String iconUrl, String title, String subTitle, double size, BoxDecoration boxDecoration){
     return InkWell(
-      onTap: () {
+          onTap: () {
         final snackBar = SnackBar(content: Text("Tap"));
 
         Scaffold.of(context).showSnackBar(snackBar);
@@ -52,29 +56,25 @@ class BusTrainCardComponent extends StatelessWidget {
             MaterialPageRoute(builder: (context) => BusTimeListPage()),
           );
       },
-      child: buildItemCard(context),
-    );
-  }
-
-  Widget buildItem(String iconUrl, String title, String subTitle, double size, BoxDecoration boxDecoration){
-    return Container(
-          width: size,
-          decoration: boxDecoration,
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              itemCardIcon(iconUrl),
-              Expanded(
-                // flex: 1,
-                child: new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[itemCardText(title, subTitle)],
+          child: Container(
+            width: size,
+            decoration: boxDecoration,
+            padding: EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                itemCardIcon(iconUrl),
+                Expanded(
+                  // flex: 1,
+                  child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[itemCardText(title, subTitle)],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        );
+    );
   }
 
   Widget buildItemCard(BuildContext context) {
@@ -86,8 +86,9 @@ class BusTrainCardComponent extends StatelessWidget {
       boxShadow: [
         BoxShadow(
           color: Colors.blueGrey[100],
-          blurRadius: 32.0,
-          spreadRadius: 1.0,
+          blurRadius: 20.0,
+                spreadRadius: 1.0,
+                offset: Offset(0, 10),
         ),
       ],
     );
