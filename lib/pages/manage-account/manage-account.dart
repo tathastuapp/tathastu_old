@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tathastu/pages/manage-categories/manage-categories.dart';
 
 class ManageAccountPage extends StatefulWidget {
   final Widget child;
@@ -20,18 +21,7 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
           style: TextStyle(color: Colors.black),
         ),
         actions: <Widget>[
-          // PopupMenuButton<String>(
-          //   itemBuilder: (BuildContext context){
-          //     return [PopupMenuItem<String>(
-          //       value: 'Settings',
-          //       child: Text('Settings'),
-          //     ),
-          //     PopupMenuItem<String>(
-          //       value: 'Help',
-          //       child: Text('Help'),
-          //     )];
-          //   },
-          // ),
+          
         ],
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
@@ -59,34 +49,42 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
   buildItemCard(String iconUrl, String title) {
     // double height =MediaQuery.of(context).size.height/2 -24;
     double width = MediaQuery.of(context).size.width / 2 - 24;
-    return Container(
-      height: 80.0,
-      width: width,
-      padding: EdgeInsets.all(8.0),
-      margin: EdgeInsets.symmetric(vertical:8.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.0),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blueGrey[100],
-            blurRadius: 20.0,
-            spreadRadius: 1.0,
-            offset: Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Row(
-        children: <Widget>[
-          Container(
-            width: 48,
-            height: 48,
-            margin: EdgeInsets.all(8.0),
-            child: new SvgPicture.asset(
-              iconUrl
-            ),),
-          Container(child: Text(title, style: TextStyle(fontSize: 20.0),)),
-        ],
+    return InkWell(
+      onTap: () {
+            Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ManageCategoriesPage()),
+        );
+          },
+          child: Container(
+        height: 80.0,
+        width: width,
+        padding: EdgeInsets.all(8.0),
+        margin: EdgeInsets.symmetric(vertical:8.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16.0),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blueGrey[100],
+              blurRadius: 20.0,
+              spreadRadius: 1.0,
+              offset: Offset(0, 10),
+            ),
+          ],
+        ),
+        child: Row(
+          children: <Widget>[
+            Container(
+              width: 48,
+              height: 48,
+              margin: EdgeInsets.all(8.0),
+              child: new SvgPicture.asset(
+                iconUrl
+              ),),
+            Container(child: Text(title, style: TextStyle(fontSize: 20.0),)),
+          ],
+        ),
       ),
     );
   }
