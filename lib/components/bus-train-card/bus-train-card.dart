@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tathastu/pages/bus-time-list/bus-time-list.dart';
 
-// cityGuide Icon Widget
-class BusTrainCardComponent extends StatelessWidget {
-  BusTrainCardComponent({this.context});
-  final BuildContext context;
 
+class BusTrainCardComponent extends StatefulWidget {
+  final Widget child;
 
+  BusTrainCardComponent({Key key, this.child}) : super(key: key);
+
+  _BusTrainCardComponentState createState() => _BusTrainCardComponentState();
+}
+
+class _BusTrainCardComponentState extends State<BusTrainCardComponent> {
+  
   Widget itemCardIcon(String iconUrl){
     return Container(
     width: 56,
@@ -42,15 +47,13 @@ class BusTrainCardComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return buildItemCard(context);
+    return buildItemCard();
   }
 
   Widget buildItem(String iconUrl, String title, String subTitle, double size, BoxDecoration boxDecoration){
     return InkWell(
           onTap: () {
-        final snackBar = SnackBar(content: Text("Tap"));
-
-        Scaffold.of(context).showSnackBar(snackBar);
+        print('bus train clicked');
         Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => BusTimeListPage()),
@@ -77,7 +80,7 @@ class BusTrainCardComponent extends StatelessWidget {
     );
   }
 
-  Widget buildItemCard(BuildContext context) {
+  Widget buildItemCard() {
     double size = MediaQuery.of(context).size.width / 2 - 16;
 
     var boxDecoration = BoxDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tathastu/pages/manage-bus-time/manage-bus-time.dart';
 import 'package:tathastu/pages/manage-categories/manage-categories.dart';
 
 class ManageAccountPage extends StatefulWidget {
@@ -20,9 +21,7 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
           'My Account',
           style: TextStyle(color: Colors.black),
         ),
-        actions: <Widget>[
-          
-        ],
+        actions: <Widget>[],
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -35,7 +34,7 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
     return ListView(
       padding: EdgeInsets.all(8.0),
       children: <Widget>[
-        buildItemCard('assets/icons/document.svg','Categories'),
+        buildItemCard('assets/icons/document.svg', 'Categories'),
         buildItemCard('assets/icons/web-page.svg', 'Customers'),
         buildItemCard('assets/icons/newspaper.svg', 'Newspapers'),
         buildItemCard('assets/icons/sale.svg', 'Offers'),
@@ -51,16 +50,23 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
     double width = MediaQuery.of(context).size.width / 2 - 24;
     return InkWell(
       onTap: () {
-            Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ManageCategoriesPage()),
-        );
-          },
-          child: Container(
+        if (title == 'Bus Time') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ManageBusTimePage()),
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ManageCategoriesPage()),
+          );
+        }
+      },
+      child: Container(
         height: 80.0,
         width: width,
         padding: EdgeInsets.all(8.0),
-        margin: EdgeInsets.symmetric(vertical:8.0),
+        margin: EdgeInsets.symmetric(vertical: 8.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
           color: Colors.white,
@@ -79,10 +85,13 @@ class _ManageAccountPageState extends State<ManageAccountPage> {
               width: 48,
               height: 48,
               margin: EdgeInsets.all(8.0),
-              child: new SvgPicture.asset(
-                iconUrl
-              ),),
-            Container(child: Text(title, style: TextStyle(fontSize: 20.0),)),
+              child: new SvgPicture.asset(iconUrl),
+            ),
+            Container(
+                child: Text(
+              title,
+              style: TextStyle(fontSize: 20.0),
+            )),
           ],
         ),
       ),

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "807351113248",
+    "firebase_url": "https://tathastu-a1119.firebaseio.com",
+    "project_id": "tathastu-a1119",
+    "storage_bucket": "tathastu-a1119.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807351113248:android:205ac60e5aebb499",
+        "android_client_info": {
+          "package_name": "in.tathastuapp.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807351113248-9qnjr8du3psftrpp0pbfeslrjm092a9g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.tathastuapp.android",
+            "certificate_hash": "0659a65a2ac47283c215c54e28c9f42c4f1be90c"
+          }
+        },
+        {
+          "client_id": "807351113248-tsg339797ohhfe69h1omphi3m3l6q939.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyq-kbW_Iepx7LGrvkoqkuvIBwdoKBMrM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807351113248-tsg339797ohhfe69h1omphi3m3l6q939.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

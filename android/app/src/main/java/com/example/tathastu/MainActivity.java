@@ -1,4 +1,4 @@
-package com.example.tathastu;
+package in.tathastuapp.android;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
