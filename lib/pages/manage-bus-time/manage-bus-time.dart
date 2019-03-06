@@ -3,6 +3,7 @@ import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 import 'package:intl/intl.dart';
+import 'package:tathastu/services/bus-time/bus-time.dart';
 
 class ManageBusTimePage extends StatefulWidget {
   final Widget child;
@@ -15,6 +16,11 @@ class ManageBusTimePage extends StatefulWidget {
 class _ManageBusTimePageState extends State<ManageBusTimePage>
     with SingleTickerProviderStateMixin {
   TabController controller;
+  final busService = new BusTimeService();
+
+  final addBusTimeFormKey = GlobalKey<FormState>(debugLabel: 'addFormKey');
+
+  String source = '', destination = '', busStations = '';
 
   final formats = {
     InputType.both: DateFormat("EEEE, MMMM d, yyyy 'at' h:mma"),
@@ -129,7 +135,7 @@ class _ManageBusTimePageState extends State<ManageBusTimePage>
     return Container(
         padding: EdgeInsets.all(24.0),
         child: Form(
-          // key: addCategoryFormKey,
+          key: addBusTimeFormKey,
           child: ListView(
             children: <Widget>[
               Container(
@@ -149,7 +155,10 @@ class _ManageBusTimePageState extends State<ManageBusTimePage>
                  setState(() => date = dt);
                  print(timeFormat12Hr.format(dt));
                  print(dt);
-              }
+              },
+              onSaved: (dt){
+                setState(() => date = dt);
+              },
             ),
               ),
               Container(
@@ -168,7 +177,9 @@ class _ManageBusTimePageState extends State<ManageBusTimePage>
                   ),
                   style: TextStyle(fontSize: 20.0, color: Colors.black87),
                   // validator: OtpValidator.validate,
-                  onSaved: (value) {},
+                  onSaved: (value) {
+                    setState(() => source = value);
+                  },
                 ),
               ),
               Container(
@@ -187,7 +198,9 @@ class _ManageBusTimePageState extends State<ManageBusTimePage>
                   ),
                   style: TextStyle(fontSize: 20.0, color: Colors.black87),
                   // validator: OtpValidator.validate,
-                  onSaved: (value) {},
+                  onSaved: (value) {
+                    setState(() => destination = value);
+                  },
                 ),
               ),
               Container(
@@ -201,12 +214,14 @@ class _ManageBusTimePageState extends State<ManageBusTimePage>
                   decoration: const InputDecoration(
                     // border: OutlineInputBorder(),
                     // icon: Icon(Icons.message),
-                    hintText: 'Bus Station',
-                    labelText: 'Bus Station',
+                    hintText: 'Bus Stations',
+                    labelText: 'Bus Stations',
                   ),
                   style: TextStyle(fontSize: 20.0, color: Colors.black87),
                   // validator: OtpValidator.validate,
-                  onSaved: (value) {},
+                  onSaved: (value) {
+                    setState(() => busStations = value);
+                  },
                 ),
               ),
               SizedBox(
@@ -234,10 +249,27 @@ class _ManageBusTimePageState extends State<ManageBusTimePage>
                   ),
                 child: FlatButton(
                   child: Text('Add'),
-                  onPressed: (){},
+                  onPressed: addBusTime,
                 ),),
             ],
           ),
         ));
   }
+
+  addBusTime()async {
+
+    if(addBusTimeFormKey.currentState.validate()){
+      addBusTimeFormKey.currentState.save();
+
+    print(date);
+    print(source);
+    print(destination);
+    print(busStations);
+
+    String data = await busService.addBusTime(date, source, destination, busStations);
+    print(data);
+
+    }
+  }
+
 }
